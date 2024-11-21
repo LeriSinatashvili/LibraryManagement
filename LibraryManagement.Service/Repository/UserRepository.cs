@@ -14,7 +14,14 @@ using System.Data;
 
 namespace LibraryManagement.Service.Repository
 {
-    public class UserRepository
+    public interface IUserRepository
+    {
+        void RegisterUser(User user);
+
+        void DeleteUser(User user);
+    }
+
+    public class UserRepository : IUserRepository
     {
 
         public void RegisterUser(User user)
